@@ -1,0 +1,117 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 215 30% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 28% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 196 100% 71%;
+    --primary-foreground: 215 32% 10%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 170 100% 70%;
+    --accent-foreground: 215 32% 10%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 212 100% 73%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 215 30% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 196 100% 71%;
+    --sidebar-primary-foreground: 215 32% 10%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-health-accent/20 selection:text-health-accent;
+  }
+
+  body {
+    @apply bg-health-background text-health-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .glass-morphism {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
+  }
+  
+  .neo-blur {
+    @apply backdrop-blur-2xl bg-black/40 border border-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-br from-health-accent via-health-highlight to-primary bg-clip-text text-transparent;
+  }
+  
+  .health-card {
+    @apply bg-health-card rounded-lg border border-white/10 p-6 shadow-lg transition-all duration-300 hover:shadow-xl;
+  }
+
+  .health-stat {
+    @apply text-4xl font-bold text-health-accent;
+  }
+
+  .animate-enter {
+    @apply animate-fade-in;
+  }
+
+  .animate-exit {
+    @apply animate-fade-out;
+  }
+
+  .page-transition-enter {
+    @apply opacity-0 transition-opacity duration-300;
+  }
+
+  .page-transition-enter-active {
+    @apply opacity-100;
+  }
+
+  .page-transition-exit {
+    @apply opacity-100 transition-opacity duration-300;
+  }
+
+  .page-transition-exit-active {
+    @apply opacity-0;
+  }
+}
